@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   padding: 10px 10px;
-  background-color: royalblue;
+  background-color: rgba(255, 255, 255, 0.3);
   border: none;
   color: white;
   font-size: 18px;
@@ -13,7 +13,8 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: rgb(95, 131, 238);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
     scale: 1.1;
   }
 `;

@@ -7,6 +7,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: whitesmoke;
+  background-image: linear-gradient(to right, #3a6186 0%, #89253e 100%);
 }
 
 .container {
@@ -18,6 +19,7 @@ body {
 .title {
   margin-top: 2rem;
   margin-bottom: 3rem;
+  color: white;
 }
 
 .form__wrapper {
@@ -26,20 +28,20 @@ body {
 }
 
 .form__wrapper form {
-  /* box-shadow: #cccccc 0px 3px 8px; */
   border-radius: 8px;
   padding: 2rem 2rem;
-  background-color: white;
+  background-image: linear-gradient(to right, #3b668f 0%, #793345 100%);
   width: 300px;
 }
 
 form > input {
   padding: 10px;
   width: 100%;
+  color: rgba(255, 255, 255, 0.925);
   margin-bottom: 10px;
   border-radius: 8px;
   outline: none;
-  box-shadow: #cccccc 0px 3px 8px;
+  box-shadow: rgba(255, 255, 255, 0.288) 0px 2px 8px 0px;
   border: none;
   background-color: transparent;
 }
@@ -47,10 +49,11 @@ form > input {
 input::placeholder {
   text-align: center;
   letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.699);
 }
 
 input:focus::placeholder {
-  color: transparent;
+  color: rgba(255, 255, 255, 0.925);
 }
 
 .btn-wrapper {
@@ -60,7 +63,7 @@ input:focus::placeholder {
 .btn-submit {
   width: 50%;
   padding: 8px 2px;
-  background-color: royalblue;
+  background-color: rgba(255, 255, 255, 0.158);
   border: none;
   color: white;
   font-weight: 600;
@@ -73,7 +76,7 @@ input:focus::placeholder {
 }
 
 .btn-submit:hover {
-  background-color: rgb(95, 131, 238);
+  background-color: rgba(95, 131, 238, 0.329);
 }
 
 section {
@@ -98,7 +101,7 @@ section {
 }
 
 .btn-pencil {
-  color: #424236f8;
+  color: #ffffff8c;
   padding-right: 1rem;
 }
 
@@ -107,18 +110,19 @@ section {
   background-color: #eee;
   border: none;
   background-color: transparent;
-  font-weight: 600;
+  letter-spacing: 1px;
   outline: none;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(239, 239, 241, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
   padding: 5px 0px 5px 0px;
   width: 80%;
+  color: white;
 
   font-size: 14px;
 }
 
 .btn-save {
-  color: green;
+  color: rgba(114, 182, 114, 0.664);
   padding-right: 1rem;
 }
 
@@ -139,19 +143,20 @@ span:hover {
   color: white;
   padding: 0.1rem 0.3rem 0.1rem 0.3rem;
   border-radius: 5px;
-  background-color: teal;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination .page-link {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.815);
 }
 
-.page-next:hover {
-  color: green;
-}
-
-.page-prev:hover {
-  color: rgb(231, 74, 74);
+.page-prev,
+.page-next {
+  padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+  background-color: red;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -182,7 +187,8 @@ span:hover {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: rgba(255, 255, 255, 0.589);
+    box-shadow: rgba(223, 223, 223, 0.15) 0px 15px 25px, rgba(196, 194, 194, 0.05) 0px 5px 10px;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -190,7 +196,7 @@ span:hover {
   table th {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #e4e1e1;
+    background-color: #ffffff41;
   }
 
   table td {
