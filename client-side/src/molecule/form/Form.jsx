@@ -10,7 +10,7 @@ function Form({ setData, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post('/api/customers', {
+    await axios.post('http://localhost:5000/api/customers', {
       name: name,
       surname: surname,
       email: email,
@@ -24,7 +24,7 @@ function Form({ setData, onClose }) {
 
     onClose();
 
-    const response = await axios.get('/api/customers');
+    const response = await axios.get('http://localhost:5000/api/customers');
     setData(response.data);
   };
 
