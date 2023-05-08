@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Table from './molecule/table/Table';
+import Button from './atom/button/Button';
+import Modal from './molecule/modal/Modal';
+import Form from './molecule/form';
 
 function App() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
+  useEffect(() => {
+    axios.get('/api/customers').then((response) => {
+      setData(response.data);
+      console.log(response.data);
+      setLoading(false);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h1 className='title'>Event Registry</h1>
+      <Button action={openModal} />
+
+      {modalOpen && (
+        <Modal onClose={closeModal}>
+          <Form setData={setData} onClose={closeModal} />
+        </Modal>
+      )}
+
+      {!loading && <Table data={data} setData={setData} />}
     </div>
   );
 }
