@@ -16,14 +16,14 @@ const Table = ({ data, setData }) => {
   const handleDelete = async (id, e) => {
     try {
       e.preventDefault();
-      await axios.delete(`http://localhost:5000/api/customers/${id}`);
+      await axios.delete(`/api/customers/${id}`);
       setData(
         data.filter((item) => {
           return item._id !== id;
         })
       );
 
-      const response = await axios.get('http://localhost:5000/api/customers');
+      const response = await axios.get('/api/customers');
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -36,10 +36,10 @@ const Table = ({ data, setData }) => {
 
   const handleSave = async (id) => {
     // Remove the newData parameter from handleSave function
-    await axios.put(`http://localhost:5000/api/customers/${id}`, newData); // Use newData state variable here
+    await axios.put(`/api/customers/${id}`, newData); // Use newData state variable here
     setEditRow(null);
 
-    const response = await axios.get('http://localhost:5000/api/customers');
+    const response = await axios.get('/api/customers');
     setData(response.data);
   };
 

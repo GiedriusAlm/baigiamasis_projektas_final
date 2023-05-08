@@ -14,7 +14,7 @@ function App() {
   const closeModal = () => setModalOpen(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/customers').then((response) => {
+    axios.get('/api/customers').then((response) => {
       setData(response.data);
       console.log(response.data);
       setLoading(false);
