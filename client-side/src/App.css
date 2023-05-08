@@ -109,9 +109,12 @@ section {
   background-color: transparent;
   font-weight: 600;
   outline: none;
-  box-shadow: #4169e1 0px 2px px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
   padding: 5px 0px 5px 0px;
+  width: 80%;
+
+  font-size: 14px;
 }
 
 .btn-save {
@@ -128,18 +131,27 @@ span:hover {
   gap: 1rem;
   list-style: none;
   justify-content: center;
+  align-items: center;
   margin-top: 3rem;
 }
 
 .active {
-  color: black;
-  font-weight: 600;
-  background-color: #e4e1e1;
+  color: white;
   padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  border-radius: 5px;
+  background-color: teal;
 }
 
 .pagination .page-link {
   cursor: pointer;
+}
+
+.page-next:hover {
+  color: green;
+}
+
+.page-prev:hover {
+  color: rgb(231, 74, 74);
 }
 
 @media (min-width: 768px) {

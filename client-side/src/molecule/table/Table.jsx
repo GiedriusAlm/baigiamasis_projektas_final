@@ -108,7 +108,7 @@ const Table = ({ data, setData }) => {
         <nav>
           <ul className='pagination'>
             <li className='page-item'>
-              <p className='page-link' onClick={prevPage}>
+              <p className='page-link page-prev' onClick={prevPage}>
                 Prev
               </p>
             </li>
@@ -120,7 +120,7 @@ const Table = ({ data, setData }) => {
               </li>
             ))}
             <li className='page-item'>
-              <p className='page-link' onClick={nextPage}>
+              <p className='page-link page-next' onClick={nextPage}>
                 Next
               </p>
             </li>
