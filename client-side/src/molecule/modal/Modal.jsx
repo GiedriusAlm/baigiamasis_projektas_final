@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
-import { StyledOverlay, StyledModalWrapper, StyledModal } from './styles';
+import { StyledOverlay, StyledModalWrapper } from './styles';
 
 const Modal = ({ children, onClose }) => {
   useEffect(() => {
@@ -24,7 +24,7 @@ const Modal = ({ children, onClose }) => {
     <>
       <StyledOverlay></StyledOverlay>
       <StyledModalWrapper onClick={closeOnOverlay} data-id='modalWrapper'>
-        <StyledModal>{children}</StyledModal>
+        {children}
       </StyledModalWrapper>
     </>,
     document.getElementById('portal')
