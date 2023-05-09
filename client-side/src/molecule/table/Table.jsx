@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import ICONS from '../../shared/icons';
+import { StyledTable } from './styles';
 
 const Table = ({ data, setData }) => {
   const [editRow, setEditRow] = useState(null);
@@ -66,66 +67,68 @@ const Table = ({ data, setData }) => {
   };
 
   return (
-    <section>
-      <div className='table__wrapper'>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {records.map((item) => (
-              <tr key={item._id} className={`collapsible${editRow === item._id ? ' editable' : ''}`}>
-                <td>{editRow === item._id ? <input defaultValue={item.name} onChange={(e) => handleInputChange(e, 'name')} /> : item.name}</td>
-                <td>{editRow === item._id ? <input defaultValue={item.surname} onChange={(e) => handleInputChange(e, 'surname')} /> : item.surname}</td>
-                <td>{editRow === item._id ? <input defaultValue={item.email} onChange={(e) => handleInputChange(e, 'email')} /> : item.email}</td>
-                <td>{editRow === item._id ? <input defaultValue={item.age} onChange={(e) => handleInputChange(e, 'age')} /> : item.age}</td>
-                <td className='action-btns'>
-                  {editRow === item._id ? (
-                    <span className='btn-save' onClick={() => handleSave(item._id)}>
-                      {ICONS.save}
-                    </span>
-                  ) : (
-                    <span className='btn-pencil' onClick={() => handleEdit(item._id)}>
-                      {ICONS.pencil}
-                    </span>
-                  )}
-                  <span className='btn-trash' onClick={(e) => handleDelete(item._id, e)}>
-                    {ICONS.trash}
-                  </span>
-                </td>
+    <StyledTable>
+      <section>
+        <div className='table__wrapper'>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <nav>
-          <ul className='pagination'>
-            <li className='page-item'>
-              <p className='page-link page-prev' onClick={prevPage}>
-                Prev
-              </p>
-            </li>
-            {numbers.map((n, i) => (
-              <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
-                <p className='page-link' onClick={() => changeCurrentPage(n)}>
-                  {n}
+            </thead>
+            <tbody>
+              {records.map((item) => (
+                <tr key={item._id} className={`collapsible${editRow === item._id ? ' editable' : ''}`}>
+                  <td>{editRow === item._id ? <input defaultValue={item.name} onChange={(e) => handleInputChange(e, 'name')} /> : item.name}</td>
+                  <td>{editRow === item._id ? <input defaultValue={item.surname} onChange={(e) => handleInputChange(e, 'surname')} /> : item.surname}</td>
+                  <td>{editRow === item._id ? <input defaultValue={item.email} onChange={(e) => handleInputChange(e, 'email')} /> : item.email}</td>
+                  <td>{editRow === item._id ? <input defaultValue={item.age} onChange={(e) => handleInputChange(e, 'age')} /> : item.age}</td>
+                  <td className='action-btns'>
+                    {editRow === item._id ? (
+                      <span className='btn-save' onClick={() => handleSave(item._id)}>
+                        {ICONS.save}
+                      </span>
+                    ) : (
+                      <span className='btn-pencil' onClick={() => handleEdit(item._id)}>
+                        {ICONS.pencil}
+                      </span>
+                    )}
+                    <span className='btn-trash' onClick={(e) => handleDelete(item._id, e)}>
+                      {ICONS.trash}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <nav>
+            <ul className='pagination'>
+              <li className='page-item'>
+                <p className='page-link page-prev' onClick={prevPage}>
+                  Prev
                 </p>
               </li>
-            ))}
-            <li className='page-item'>
-              <p className='page-link page-next' onClick={nextPage}>
-                Next
-              </p>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </section>
+              {numbers.map((n, i) => (
+                <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
+                  <p className='page-link' onClick={() => changeCurrentPage(n)}>
+                    {n}
+                  </p>
+                </li>
+              ))}
+              <li className='page-item'>
+                <p className='page-link page-next' onClick={nextPage}>
+                  Next
+                </p>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </StyledTable>
   );
 };
 
