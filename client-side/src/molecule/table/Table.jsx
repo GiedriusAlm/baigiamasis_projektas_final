@@ -35,8 +35,7 @@ const Table = ({ data, setData }) => {
   };
 
   const handleSave = async (id) => {
-    // Remove the newData parameter from handleSave function
-    await axios.put(`/api/customers/${id}`, newData); // Use newData state variable here
+    await axios.put(`/api/customers/${id}`, newData);
     setEditRow(null);
 
     const response = await axios.get('/api/customers');
@@ -44,7 +43,6 @@ const Table = ({ data, setData }) => {
   };
 
   const handleInputChange = (e, fieldName) => {
-    // Add a new function to handle input changes
     setNewData({
       ...newData,
       [fieldName]: e.target.value,

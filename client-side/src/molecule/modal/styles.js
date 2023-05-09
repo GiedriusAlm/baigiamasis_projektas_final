@@ -7,7 +7,7 @@ export const StyledOverlay = styled.div`
   bottom: 0;
   left: 0;
 
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.95);
 `;
 
 export const StyledModalWrapper = styled.div`

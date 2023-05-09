@@ -14,11 +14,16 @@ function App() {
   const closeModal = () => setModalOpen(false);
 
   useEffect(() => {
-    axios.get('/api/customers').then((response) => {
-      setData(response.data);
-      console.log(response.data);
-      setLoading(false);
-    });
+    axios
+      .get('/api/customers')
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (

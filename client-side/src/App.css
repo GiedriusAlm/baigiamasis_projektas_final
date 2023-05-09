@@ -7,7 +7,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: whitesmoke;
-  background-image: linear-gradient(to right, #3a6186 0%, #89253e 100%);
+  background-image: linear-gradient(to right, #232526 0%, #414345 100%);
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
 .form__wrapper form {
   border-radius: 8px;
   padding: 2rem 2rem;
-  background-image: linear-gradient(to right, #3b668f 0%, #793345 100%);
+  background-image: linear-gradient(to right, #232526 0%, #414345 100%);
   width: 300px;
 }
 
@@ -236,6 +236,7 @@ span:hover {
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
+
   thead tr {
     position: absolute;
     top: -9999px;
@@ -259,6 +260,7 @@ span:hover {
     padding-left: 50%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.582);
   }
 
   td:before {
