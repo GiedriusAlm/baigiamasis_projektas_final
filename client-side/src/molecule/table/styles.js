@@ -160,8 +160,6 @@ export const StyledTable = styled.div`
   }
 
   @media only screen and (max-width: 768px), (max-device-width: 768px) {
-    /* Force table to not be like tables anymore */
-
     table,
     thead,
     tbody,
@@ -171,7 +169,9 @@ export const StyledTable = styled.div`
       display: block;
     }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
+    .table__wrapper {
+      width: 100%;
+    }
 
     thead tr {
       position: absolute;
@@ -189,7 +189,6 @@ export const StyledTable = styled.div`
     }
 
     td {
-      /* Behave  like a "row" */
       border: none;
       border-bottom: 1px solid #eee;
       position: relative;
@@ -200,20 +199,13 @@ export const StyledTable = styled.div`
     }
 
     td:before {
-      /* Now like a table header */
       position: absolute;
-      /* Top/left values mimic padding */
       top: 0;
-      left: 6px;
-      width: 45%;
+      left: 06px;
       padding-right: 10px;
       white-space: nowrap;
     }
 
-    /*
-		Label the data
-    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
-		*/
     td:nth-of-type(1):before {
       content: 'Name';
       font-weight: 600;

@@ -28,7 +28,6 @@ export const StyledForm = styled.div`
   input::placeholder {
     text-align: center;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.699);
   }
 
   input:focus::placeholder {
