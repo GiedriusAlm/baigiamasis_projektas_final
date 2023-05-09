@@ -10,23 +10,26 @@ function Form({ setData, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      await axios.post('/api/customers', {
+        name: name,
+        surname: surname,
+        email: email,
+        age: age,
+      });
 
-    await axios.post('/api/customers', {
-      name: name,
-      surname: surname,
-      email: email,
-      age: age,
-    });
+      setName('');
+      setSurname('');
+      setEmail('');
+      setAge('');
 
-    setName('');
-    setSurname('');
-    setEmail('');
-    setAge('');
+      onClose();
 
-    onClose();
-
-    const response = await axios.get('/api/customers');
-    setData(response.data);
+      const response = await axios.get('/api/customers');
+      setData(response.data);
+    } catch (error) {
+      console.log('Error submitting customer' + error);
+    }
   };
 
   return (

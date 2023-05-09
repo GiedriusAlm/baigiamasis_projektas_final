@@ -27,7 +27,7 @@ const Table = ({ data, setData }) => {
       const response = await axios.get('/api/customers');
       setData(response.data);
     } catch (error) {
-      console.error(error);
+      console.error('Error deleting customer:' + error);
     }
   };
 
