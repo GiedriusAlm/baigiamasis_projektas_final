@@ -2,32 +2,32 @@ import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-component
 const theme = {
   palette: {
     default: {
-      dark: '(to right, #232526 0%, #414345 100%)',
+      dark: '',
       main: ' rgba(255, 255, 255, 0.925)',
       light: '#ffff',
     },
-    input: {
-      dark: '',
-      main: 'rgba(255, 255, 255, 0.925)',
-      light: '',
+    form: {
+      dark: 'rgb(0, 0, 0)',
+      main: 'rgba(255, 255, 255, 0.5)',
+      light: 'rgba(255, 255, 255, 0.288)',
     },
     placeholder: {
       dark: '',
-      main: 'rgba(255, 255, 255, 0.699)',
+      main: 'rgba(255, 255, 255, 0.6)',
       light: 'rgba(255, 255, 255, 0.925)',
     },
     submit: {
       dark: '',
       main: 'rgba(255, 255, 255, 0.158)',
-      light: 'rgba(95, 131, 238, 0.329)',
+      light: 'rgba(255, 255, 255, 0.05)',
     },
     icons: {
       trash: 'rgb(231, 74, 74)',
-      pencil: '#ffffff8c',
+      pencil: 'rgba(255, 255, 255, 0.549)',
       save: 'rgba(114, 182, 114, 0.664)',
     },
-    dark: {
-      main: 'rgb(38, 37, 43)',
+    error: {
+      message: 'rgb(231, 74, 74)',
     },
     module: {
       main: 'rgb(137, 135, 135)',
@@ -35,7 +35,7 @@ const theme = {
     overlay: {
       light: 'rgba(0, 0, 0, 0.15)',
       main: 'rgba(0, 0, 0, 0.3)',
-      dark: 'rgba(0, 0, 0, 0.6)',
+      dark: 'rgba(0, 0, 0, 0.9)',
     },
   },
 };

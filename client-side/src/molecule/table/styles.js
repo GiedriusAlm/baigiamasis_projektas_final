@@ -9,26 +9,8 @@ export const StyledTable = styled.div`
 
   table {
     border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.582);
     box-shadow: rgba(223, 223, 223, 0.15) 0px 15px 25px, rgba(196, 194, 194, 0.05) 0px 5px 10px;
     border-radius: 8px;
-    overflow: hidden;
-  }
-
-  table th {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #ffffff46;
-    color: white;
-  }
-
-  table td {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border: none;
-    border-bottom: 1px solid #eee;
   }
 
   table tbody tr {
@@ -36,11 +18,7 @@ export const StyledTable = styled.div`
   }
 
   table tbody tr:hover {
-    background-color: #ffffff13;
-  }
-
-  .action-btns {
-    justify-content: center;
+    background-color: ${(props) => props.theme.palette.submit.light};
   }
 
   .table__wrapper {
@@ -55,27 +33,26 @@ export const StyledTable = styled.div`
   }
 
   .btn-trash {
-    color: rgb(231, 74, 74);
+    color: ${(props) => props.theme.palette.icons.trash};
   }
 
   .btn-pencil {
-    color: #ffffff8c;
+    color: ${(props) => props.theme.palette.icons.pencil};
     padding-right: 1rem;
   }
 
   .btn-save {
-    color: rgba(114, 182, 114, 0.664);
+    color: ${(props) => props.theme.palette.icons.save};
     padding-right: 1rem;
   }
 
   .editable input {
     text-align: center;
-    background-color: #eee;
     border: none;
     background-color: transparent;
     letter-spacing: 1px;
     outline: none;
-    box-shadow: rgba(239, 239, 241, 0.2) 0px 7px 29px 0px;
+    box-shadow: ${(props) => props.theme.palette.submit.main} 0px 7px 29px 0px;
     border-radius: 5px;
     padding: 5px 0px 5px 0px;
     width: 80%;
@@ -101,12 +78,12 @@ export const StyledTable = styled.div`
     color: white;
     padding: 0.1rem 0.3rem 0.1rem 0.3rem;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: ${(props) => props.theme.palette.form.light};
   }
 
   .pagination .page-link {
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.815);
+    color: ${(props) => props.theme.palette.default.main};
   }
 
   .page-prev,
@@ -114,7 +91,15 @@ export const StyledTable = styled.div`
     padding: 0.2rem 0.8rem 0.2rem 0.8rem;
     background-color: red;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: ${(props) => props.theme.palette.submit.main};
+    transition: all 300ms ease-in;
+  }
+
+  .page-prev:hover {
+    background-color: ${(props) => props.theme.palette.form.light};
+  }
+  .page-next:hover {
+    background-color: ${(props) => props.theme.palette.form.light};
   }
 
   @media (min-width: 768px) {
@@ -122,8 +107,8 @@ export const StyledTable = styled.div`
       border-collapse: collapse;
       width: 100%;
       text-align: center;
-      color: rgba(255, 255, 255, 0.582);
-      box-shadow: rgba(223, 223, 223, 0.15) 0px 15px 25px, rgba(196, 194, 194, 0.05) 0px 5px 10px;
+      color: ${(props) => props.theme.palette.placeholder.main};
+      box-shadow: ${(props) => props.theme.palette.submit.main} 0px 15px 25px, rgba(196, 194, 194, 0.05) 0px 5px 10px;
       border-radius: 8px;
       overflow: hidden;
     }
@@ -131,15 +116,15 @@ export const StyledTable = styled.div`
     table th {
       padding-top: 1rem;
       padding-bottom: 1rem;
-      background-color: #ffffff46;
-      color: white;
+      background-color: ${(props) => props.theme.palette.submit.main};
+      color: ${(props) => props.theme.palette.default.main};
     }
 
     table td {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       border: none;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid ${(props) => props.theme.palette.form.light};
     }
 
     table tbody tr {
@@ -147,7 +132,7 @@ export const StyledTable = styled.div`
     }
 
     table tbody tr:hover {
-      background-color: #ffffff13;
+      background-color: ${(props) => props.theme.palette.submit.light};
     }
 
     section {
@@ -190,18 +175,18 @@ export const StyledTable = styled.div`
 
     td {
       border: none;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid ${(props) => props.theme.palette.form.light};
       position: relative;
       padding-left: 50%;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
-      color: rgba(255, 255, 255, 0.582);
+      color: ${(props) => props.theme.palette.placeholder.main};
     }
 
     td:before {
       position: absolute;
       top: 0;
-      left: 06px;
+      left: 6px;
       padding-right: 10px;
       white-space: nowrap;
     }

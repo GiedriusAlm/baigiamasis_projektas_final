@@ -6,31 +6,31 @@ export const StyledForm = styled.div`
     justify-content: center;
   }
 
-  form {
-    position: relative;
-  }
-
   .error-message {
-    color: rgb(231, 74, 74);
+    color: ${(props) => props.theme.palette.error.message};
     font-size: 12px;
     margin-bottom: 10px;
+    padding-bottom: 20px;
   }
 
   .form__wrapper form {
     border-radius: 8px;
     padding: 2rem 2rem;
-    background-image: linear-gradient(to right, #232526 0%, #414345 100%);
+    background-color: ${(props) => props.theme.palette.form.dark};
+    border: 1px solid ${(props) => props.theme.palette.form.main};
+    box-shadow: ${(props) => props.theme.palette.form.light} 0px 2px 8px 0px;
     width: 300px;
   }
 
   form > input {
     padding: 10px;
     width: 100%;
-    color: rgba(255, 255, 255, 0.925);
+    color: ${(props) => props.theme.palette.default.main};
     margin-bottom: 10px;
     border-radius: 8px;
+    margin-top: 8px;
     outline: none;
-    box-shadow: rgba(255, 255, 255, 0.288) 0px 2px 8px 0px;
+    box-shadow: ${(props) => props.theme.palette.form.main} 0px 2px 8px 0px;
     border: none;
     background-color: transparent;
   }
@@ -38,10 +38,11 @@ export const StyledForm = styled.div`
   input::placeholder {
     text-align: center;
     letter-spacing: 0.5px;
+    color: ${(props) => props.theme.palette.placeholder.main};
   }
 
   input:focus::placeholder {
-    color: rgba(255, 255, 255, 0.925);
+    color: ${(props) => props.theme.palette.placeholder.light};
   }
 
   .btn-wrapper {
@@ -51,7 +52,7 @@ export const StyledForm = styled.div`
   .btn-submit {
     width: 50%;
     padding: 8px 2px;
-    background-color: rgba(255, 255, 255, 0.158);
+    background-color: ${(props) => props.theme.palette.submit.main};
     border: none;
     color: white;
     font-weight: 600;
@@ -64,6 +65,6 @@ export const StyledForm = styled.div`
   }
 
   .btn-submit:hover {
-    background-color: rgba(95, 131, 238, 0.329);
+    background-color: ${(props) => props.theme.palette.form.main};
   }
 `;

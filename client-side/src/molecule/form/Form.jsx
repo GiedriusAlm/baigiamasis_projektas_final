@@ -14,16 +14,16 @@ const Form = ({ setData, onClose }) => {
     try {
       // Check for errors
       const errors = {};
-      if (name.trim() === '') {
+      if (name === '') {
         errors.name = 'Name is required';
       }
-      if (surname.trim() === '') {
+      if (surname === '') {
         errors.surname = 'Surname is required';
       }
-      if (email.trim() === '') {
+      if (email === '') {
         errors.email = 'Email is required';
       }
-      if (age.trim() === '') {
+      if (age === '') {
         errors.age = 'Age is required';
       } else if (isNaN(Number(age))) {
         errors.age = 'Age must be a number';

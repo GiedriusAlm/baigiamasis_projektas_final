@@ -7,7 +7,7 @@ export const StyledOverlay = styled.div`
   bottom: 0;
   left: 0;
 
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: ${(props) => props.theme.palette.overlay.dark};
 `;
 
 export const StyledModalWrapper = styled.div`
@@ -16,7 +16,6 @@ export const StyledModalWrapper = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  margin-top: -10rem;
   display: flex;
   justify-content: center;
   align-items: center;
