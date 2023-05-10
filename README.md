@@ -4,6 +4,8 @@ Programa skirta imonei, uzsiimancia renginiu organizavimu. Vartotojui leidziama 
 
 Matoma lentele su asmenu registru, ivedus daugiau nei 10 asmenu duomenu atiranda kitas puslapis. Puslapiai atsinaujina automatiskai priklausomai nuo duomenu kiekio. 
 
+VSCode terminale:
+
 SERVER SIDE paleidimas: npm run dev
 
 CLIENT SIDE paleidimas: npm start
