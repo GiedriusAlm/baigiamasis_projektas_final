@@ -6,6 +6,16 @@ export const StyledForm = styled.div`
     justify-content: center;
   }
 
+  form {
+    position: relative;
+  }
+
+  .error-message {
+    color: rgb(231, 74, 74);
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
   .form__wrapper form {
     border-radius: 8px;
     padding: 2rem 2rem;
@@ -55,30 +65,5 @@ export const StyledForm = styled.div`
 
   .btn-submit:hover {
     background-color: rgba(95, 131, 238, 0.329);
-  }
-
-  @media (min-width: 768px) {
-    .form__wrapper form {
-      width: 500px;
-    }
-
-    form input[name='Name'] {
-      float: left;
-      width: 49%;
-    }
-
-    form input[name='Surname'] {
-      float: right;
-      width: 49%;
-    }
-    form input[name='Email'] {
-      float: left;
-      width: 49%;
-    }
-
-    form input[name='Age'] {
-      float: right;
-      width: 49%;
-    }
   }
 `;

@@ -2,15 +2,39 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { StyledForm } from './styles';
 
-function Form({ setData, onClose }) {
+const Form = ({ setData, onClose }) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
+  const [formErrors, setFormErrors] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Check for errors
+      const errors = {};
+      if (name.trim() === '') {
+        errors.name = 'Name is required';
+      }
+      if (surname.trim() === '') {
+        errors.surname = 'Surname is required';
+      }
+      if (email.trim() === '') {
+        errors.email = 'Email is required';
+      }
+      if (age.trim() === '') {
+        errors.age = 'Age is required';
+      } else if (isNaN(Number(age))) {
+        errors.age = 'Age must be a number';
+      }
+      setFormErrors(errors);
+
+      if (Object.keys(errors).length > 0) {
+        return;
+      }
+
+      // If no errors, submit form
       await axios.post('/api/customers', {
         name: name,
         surname: surname,
@@ -36,6 +60,7 @@ function Form({ setData, onClose }) {
     <StyledForm>
       <div className='form__wrapper'>
         <form onSubmit={handleSubmit}>
+          {formErrors.name && <span className='error-message error-name'>{formErrors.name}</span>}
           <input
             name='Name'
             type='text'
@@ -44,8 +69,9 @@ function Form({ setData, onClose }) {
             onChange={(e) => {
               setName(e.target.value);
             }}
+            className={formErrors.name ? 'has-error' : ''}
           />
-
+          {formErrors.surname && <span className='error-message error-surname'>{formErrors.surname}</span>}
           <input
             name='Surname'
             type='text'
@@ -54,8 +80,9 @@ function Form({ setData, onClose }) {
             onChange={(e) => {
               setSurname(e.target.value);
             }}
+            className={formErrors.surname ? 'has-error' : ''}
           />
-
+          {formErrors.email && <span className='error-message error-email'>{formErrors.email}</span>}
           <input
             name='Email'
             type='email'
@@ -64,17 +91,21 @@ function Form({ setData, onClose }) {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            className={formErrors.email ? 'has-error' : ''}
           />
-
+          {formErrors.age && <span className='error-message error-age'>{formErrors.age}</span>}
           <input
             name='Age'
             type='text'
             placeholder='Enter age...'
             value={age}
+            a
             onChange={(e) => {
               setAge(e.target.value);
             }}
+            className={formErrors.age ? 'has-error' : ''}
           />
+
           <div className='btn-wrapper'>
             <button className='btn-submit'>SUBMIT</button>
           </div>
@@ -82,7 +113,6 @@ function Form({ setData, onClose }) {
       </div>
     </StyledForm>
   );
-}
+};
 
 export default Form;
-// test

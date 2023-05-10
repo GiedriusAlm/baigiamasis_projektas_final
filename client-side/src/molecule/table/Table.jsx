@@ -27,7 +27,7 @@ const Table = ({ data, setData }) => {
       const response = await axios.get('/api/customers');
       setData(response.data);
     } catch (error) {
-      console.error('Error deleting customer:' + error);
+      console.error('Error deleting customer: ' + error);
     }
   };
 
@@ -36,8 +36,12 @@ const Table = ({ data, setData }) => {
   };
 
   const handleSave = async (id) => {
-    await axios.put(`/api/customers/${id}`, newData);
-    setEditRow(null);
+    try {
+      await axios.put(`/api/customers/${id}`, newData);
+      setEditRow(null);
+    } catch (error) {
+      console.log('Error saving updated customer: ' + error);
+    }
 
     const response = await axios.get('/api/customers');
     setData(response.data);
